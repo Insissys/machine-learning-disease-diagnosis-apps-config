@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  portainer:
+    image: portainer/portainer-ee:latest  # ← EE image for Business Edition
+    container_name: portainer
+    restart: always
+    ports:
+      - "9443:9443"   # Secure UI
+      - "8000:8000"   # Agent communication
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+    networks:
+      - npm_default  # Connects to NGINX Proxy Manager network
+
+volumes:
+  portainer_data:
+
+networks:
+  npm_default:
+    external: true

@@ -1,0 +1,15 @@
+config:
+    server:
+        host: ""
+        port: ""
+    client:
+        url: ""
+        username: ""
+        password: ""
+        timeout: 0
+    database:
+        username: ""
+        password: ""
+        host: ""
+        port: ""
+        dbname: ""
